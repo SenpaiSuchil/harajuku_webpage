@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harajuku GDL - Comunidad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='mock/logo.png') }}" alt="Harajuku Pals GDL" style="height: 50px;">
+            <!-- <div>Harajuku Pals GDL</div> -->
+        </div>
+        <nav class="nav">
+            <a href="#">MODA</a>
+            <a href="#">BELLEZA</a>
+            <a href="#">VLOG</a>
+            <a href="#">SNAP</a>
+            <a href="#">NOTICIAS</a>
+            <a href="#">REVISTA</a>
+            <a href="#">MODELOS</a>
+            <a href="#">CONTACTO</a>
+            <a href="#">SHOPLIST</a>
+            <span class="search-icon">🔍</span>
+        </nav>
+    </header>
+
+    <!-- HERO (3 fotos locales) -->
+    <section class="hero-grid">
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/foto1.jpg') }}" alt="Harajuku 1">
+        </div>
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/revista.jpg') }}" alt="Harajuku 2">
+            <div class="hero-overlay-text">Harajuku Pals GDL</div>
+        </div>
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/foto3.jpg') }}" alt="Harajuku 3">
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <!-- Artículo destacado -->
+        <section class="featured-article">
+            <div class="article-image">
+                <img src="{{ url_for('static', filename='mock/revista.jpg') }}" alt="Revista Oriens">
+            </div>
+            <div class="article-info">
+                <span class="tag-new">NUEVO</span>
+                <h2>Harajuku GDL 2026: Basicos de Otoño</h2>
+                <p>Descubre las últimas coordenadas de la escena local. Desde el Lolita clásico hasta el Decora moderno en Guadalajara.</p>
+                <a href="#" class="btn-read">Leer Artículo →</a>
+            </div>
+        </section>
+
+        <!-- Instagram -->
+        <section class="instagram-section">
+            <div class="instagram-box">
+                <h3>Instagram</h3>
+                <p>@harajukupals</p>
+                <a href="#" class="btn-instagram">SÍGUENOS →</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TAGS -->
+    <section class="tags-section">
+        <h3>POPULAR TAGS</h3>
+        <div class="tags-container">
+            <span>#Lolita</span>
+            <span>#Decora</span>
+            <span>#VisualKei</span>
+            <span>#JiraiKei</span>
+            <span>#Gyaru</span>
+            <span>#GDL</span>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 Harajuku GDL. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

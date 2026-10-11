@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título dinámico: cada página puede sobrescribirlo -->
+    <title>{% block title %}Harajuku Pals GDL{% endblock %}</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Bloque para CSS extra que solo necesite alguna página específica -->
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <!-- HEADER (se repite en todas las páginas) -->
+    <header class="header">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='mock/logo.png') }}" alt="Harajuku Pals GDL" style="height: 50px;">
+            </a>
+        </div>
+        <nav class="nav">
+            <a href="{{ url_for('fashion') }}">MODA</a>
+            <a href="{{ url_for('beauty') }}">BELLEZA</a>
+            <a href="{{ url_for('vlog') }}">VLOG</a>
+            <a href="{{ url_for('snap') }}">SNAP</a>
+            <a href="{{ url_for('resources') }}">RECURSOS</a>
+            <a href="{{ url_for('magazine') }}">REVISTA</a>
+            <a href="{{ url_for('models') }}">MODELOS</a>
+            <a href="{{ url_for('contact') }}">CONTACTO</a>
+            <a href="{{ url_for('shoplist') }}">SHOPLIST</a>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO ÚNICO DE CADA PÁGINA -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- FOOTER (se repite en todas las páginas) -->
+    <footer class="footer">
+        <p>&copy; 2026 Harajuku Pals GDL. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bloque para JS extra que solo necesite alguna página específica -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

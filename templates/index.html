@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Harajuku Pals GDL{% endblock %}
+
+{% block content %}
+
+    <!-- HERO (único de la home) -->
+    <section class="hero-grid">
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/foto1.jpg') }}" alt="Harajuku 1">
+        </div>
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/foto2.jpg') }}" alt="Harajuku 2">
+            <div class="hero-overlay-text">Harajuku Pals GDL</div>
+        </div>
+        <div class="hero-item">
+            <img src="{{ url_for('static', filename='mock/foto3.jpg') }}" alt="Harajuku 3">
+        </div>
+    </section>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-content">
+        
+        <!-- Artículo destacado -->
+        <section class="featured-article">
+            <div class="article-image">
+                <a href="#" class="btn-read">
+                <img src="{{ url_for('static', filename='mock/revista.jpg') }}" alt="Revista Oriens">
+                </a>
+            </div>
+            <div class="article-info">
+                <span class="tag-new">NUEVO</span>
+                <h2>Harajuku GDL 2026: Básicos de Otoño</h2>
+                <p>Descubre las últimas coordenadas de la escena local. Desde el Lolita clásico hasta el Decora moderno en Guadalajara.</p>
+                <a href="#" class="btn-read">Leer Artículo →</a>
+            </div>
+        </section>
+
+        <!-- Instagram (partial reutilizable) -->
+        {% include '_instagram_box.html' %}
+
+    </main>
+
+    <!-- TAGS -->
+    <section class="tags-section">
+        <h3>POPULAR TAGS</h3>
+        <div class="tags-container">
+            <span>#Lolita</span>
+            <span>#Decora</span>
+            <span>#VisualKei</span>
+            <span>#JiraiKei</span>
+            <span>#Gyaru</span>
+            <span>#GDL</span>
+        </div>
+    </section>
+
+{% endblock %}

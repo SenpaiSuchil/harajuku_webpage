@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: harajuku_app
+    ports:
+      - "5001:5000"
+    volumes:
+      # Montamos el directorio actual dentro del contenedor
+      # Esto permite hot-reload al editar archivos
+      - .:/app
+      
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+    restart: unless-stopped

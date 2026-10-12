@@ -1,0 +1,151 @@
+/* ============================================================
+   HOME — Estilos exclusivos de la página de inicio
+   ============================================================ */
+
+/* HERO GRID (3 fotos) */
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 60vh;
+    gap: 2px;
+    background: #000;
+}
+
+.hero-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.hero-item img:hover {
+    transform: scale(1.05);
+}
+
+.hero-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-titles);
+    font-size: 3rem;
+    color: var(--accent-color);
+    text-shadow: 2px 2px 0 #000;
+    pointer-events: none;
+}
+
+/* MAIN CONTENT DE LA HOME */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Artículo destacado de la home (DIFERENTE al de Fashion) */
+.featured-article {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.article-image img {
+    width: 250px;
+    height: 350px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease;
+}
+
+.article-image img:hover {
+    transform: scale(1.03);
+}
+
+.article-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tag-new {
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    align-self: flex-start;
+    letter-spacing: 1px;
+}
+
+.article-info h2 {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    line-height: 1;
+}
+
+.article-info p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* TAGS SECTION DE LA HOME */
+.tags-section {
+    padding: 40px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+}
+
+.tags-section h3 {
+    font-family: var(--font-titles);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tags-container span {
+    background: #f0f0f0;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tags-container span:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* RESPONSIVE DE LA HOME */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .hero-item {
+        height: 40vh;
+    }
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    .featured-article {
+        flex-direction: column;
+    }
+    .article-image img {
+        width: 100%;
+        height: auto;
+    }
+}

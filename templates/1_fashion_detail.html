@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }} — Harajuku Pals GDL{% endblock %}
+
+{% block content %}
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb">
+    <a href="{{ url_for('home') }}">Inicio</a>
+    <span>/</span>
+    <a href="{{ url_for('fashion') }}">Fashion</a>
+    <span>/</span>
+    <span class="breadcrumb__current">{{ article.title }}</span>
+</nav>
+
+
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+    <span class="badge badge--tag">{{ article.tag }}</span>
+    <h1>{{ article.title }}</h1>
+    <p class="article-header__excerpt">{{ article.excerpt }}</p>
+    <p class="article-header__meta">
+        Por: <strong>{{ article.author }}</strong> · {{ article.date }}
+    </p>
+</header>
+
+
+<!-- IMAGEN PRINCIPAL -->
+<figure class="article-cover">
+    <img src="{{ url_for('static', filename=article.image) }}" alt="{{ article.title }}">
+</figure>
+
+
+<!-- CUERPO DEL ARTÍCULO -->
+<article class="article-body">
+    {{ article.body|safe }}
+</article>
+
+
+<!-- TAGS -->
+{% if article.tags %}
+<section class="article-tags">
+    {% for tag in article.tags %}
+        <a href="#" class="tag">#{{ tag }}</a>
+    {% endfor %}
+</section>
+{% endif %}
+
+
+<!-- CRÉDITOS -->
+{% include '_article_credits.html' %}
+
+
+<!-- ARTÍCULOS RELACIONADOS -->
+{% if related %}
+<section class="related-articles">
+    <h2>ARTÍCULOS RELACIONADOS</h2>
+    <div class="articles-grid articles-grid--related">
+        {% for rel in related %}
+            {% with article=rel %}
+                {% include '_article_card.html' %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+
+<!-- INSTAGRAM -->
+{% include '_instagram_box.html' %}
+
+{% endblock %}

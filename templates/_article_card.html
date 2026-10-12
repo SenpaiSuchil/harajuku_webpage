@@ -1,0 +1,15 @@
+{# templates/_article_card.html #}
+<article class="article-card">
+    <div class="article-card__image">
+        <img src="{{ url_for('static', filename=article.image) }}" alt="{{ article.title }}">
+        {% if article.is_coord %}
+            <span class="badge badge--coord">COORD</span>
+        {% endif %}
+    </div>
+    <div class="article-card__body">
+        <span class="badge badge--tag">{{ article.tag }}</span>
+        <h3><a href="{{ url_for('fashion_detail', slug=article.slug) }}">{{ article.title }}</a></h3>
+        <p>{{ article.excerpt }}</p>
+        <p class="meta">Por: <strong>{{ article.author }}</strong> · {{ article.date }}</p>
+    </div>
+</article>

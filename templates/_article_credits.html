@@ -1,0 +1,14 @@
+{# templates/_article_credits.html #}
+{% if article.credits %}
+<section class="article-credits">
+    <h3>CRÉDITOS</h3>
+    <ul>
+        {% for role, person in article.credits.items() %}
+            <li>
+                <span class="credits-role">{{ role|capitalize }}:</span>
+                <span class="credits-person">{{ person }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}

@@ -309,3 +309,576 @@ body {
     font-style: italic;
     padding: 60px 20px;
 }
+
+/* FASHION PAGE  ==========================================*/
+
+/* ==========================================================
+   FASHION — PAGE HEADER
+   ========================================================== */
+.page-header {
+    padding: 40px 40px 40px;
+    text-align: center;
+    border-bottom: 2px solid #000;
+}
+
+.page-header h1 {
+    font-family: var(--font-titles);
+    font-size: 6rem;
+    letter-spacing: 3px;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    color: #666;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================
+   BADGES
+   ========================================================== */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+.badge--dark {
+    background: #000;
+    color: #fff;
+}
+
+.badge--tag {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.badge--coord {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* ==========================================================
+   ARTÍCULO DESTACADO (HERO DE FASHION)
+   ========================================================== */
+.featured-wrapper {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.article-featured {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 60px;
+}
+
+.article-featured__image img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.article-featured__info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.article-featured__info h2 {
+    font-family: var(--font-titles);
+    font-size: 3.5rem;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.article-featured__info p {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.btn-read {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    transition: transform 0.2s;
+}
+
+.btn-read:hover {
+    transform: translateX(5px);
+}
+
+/* ==========================================================
+   FILTROS
+   ========================================================== */
+.filters-wrapper {
+    padding: 30px 40px;
+    border-bottom: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+.filters {
+    display: flex;
+    gap: 10px;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.filter {
+    background: transparent;
+    border: 1px solid #000;
+    padding: 8px 18px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter:hover {
+    background: #000;
+    color: #fff;
+}
+
+.filter.is-active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+/* ==========================================================
+   GRID DE ARTÍCULOS
+   ========================================================== */
+.articles-wrapper {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Card de artículo */
+.article-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article-card__image {
+    position: relative;
+    overflow: hidden;
+}
+
+.article-card__image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-card__image img {
+    transform: scale(1.05);
+}
+
+.article-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.article-card__body h3 {
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+.article-card__body h3 a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.article-card__body h3 a:hover {
+    color: var(--accent-color);
+}
+
+.article-card__body p {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.article-card__body .meta {
+    color: #999;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.article-card__body .meta strong {
+    color: #000;
+}
+
+/* ==========================================================
+   PAGINACIÓN
+   ========================================================== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.pagination__btn,
+.pagination__page {
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    border: 1px solid #000;
+    transition: all 0.2s;
+}
+
+.pagination__btn:hover,
+.pagination__page:hover {
+    background: #000;
+    color: #fff;
+}
+
+.pagination__page.is-active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+.pagination__btn--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+@media (max-width: 900px) {
+    .page-header {
+        padding: 60px 20px 30px;
+    }
+    .page-header h1 {
+        font-size: 4rem;
+    }
+    .featured-wrapper,
+    .filters-wrapper,
+    .articles-wrapper {
+        padding: 30px 20px;
+    }
+    .article-featured {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .article-featured__info h2 {
+        font-size: 2.5rem;
+    }
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+/* ==========================================================
+   BREADCRUMB
+   ========================================================== */
+.breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 40px 0;
+    font-size: 0.8rem;
+    color: #999;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent-color);
+}
+
+.breadcrumb__current {
+    color: #000;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   ARTICLE HEADER
+   ========================================================== */
+.article-header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 40px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.article-header h1 {
+    font-family: var(--font-titles);
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.article-header__excerpt {
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.article-header__meta {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.article-header__meta strong {
+    color: #000;
+}
+
+/* ==========================================================
+   IMAGEN DE PORTADA
+   ========================================================== */
+.article-cover {
+    max-width: 1200px;
+    margin: 20px auto 60px;
+    padding: 0 40px;
+}
+
+.article-cover img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* ==========================================================
+   CUERPO DEL ARTÍCULO
+   ========================================================== */
+.article-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #222;
+}
+
+.article-body p {
+    margin-bottom: 1.5em;
+}
+
+.article-body h2 {
+    font-family: var(--font-titles);
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin: 2em 0 0.6em;
+}
+
+.article-body h3 {
+    font-family: var(--font-titles);
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin: 1.5em 0 0.5em;
+}
+
+.article-body img {
+    width: 100%;
+    margin: 2em 0 0.5em;
+}
+
+.article-body blockquote {
+    border-left: 4px solid var(--accent-color);
+    padding: 10px 0 10px 25px;
+    margin: 2em 0;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #444;
+}
+
+.article-body a {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* ==========================================================
+   TAGS DEL ARTÍCULO
+   ========================================================== */
+.article-tags {
+    max-width: 720px;
+    margin: 60px auto 0;
+    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: #f0f0f0;
+    color: #333;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.2s;
+}
+
+.tag:hover {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+/* ==========================================================
+   CRÉDITOS
+   ========================================================== */
+.article-credits {
+    max-width: 720px;
+    margin: 60px auto 0;
+    padding: 30px 40px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.article-credits h3 {
+    font-family: var(--font-titles);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.article-credits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.article-credits li {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 0.9rem;
+}
+
+.credits-role {
+    color: #999;
+    min-width: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.credits-person {
+    color: #000;
+    font-weight: 700;
+}
+
+/* ==========================================================
+   ARTÍCULOS RELACIONADOS
+   ========================================================== */
+.related-articles {
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding: 60px 40px 0;
+    border-top: 2px solid #000;
+}
+
+.related-articles h2 {
+    font-family: var(--font-titles);
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.articles-grid--related {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ==========================================================
+   RESPONSIVE DEL DETALLE
+   ========================================================== */
+@media (max-width: 900px) {
+    .breadcrumb {
+        padding: 20px 20px 0;
+        font-size: 0.75rem;
+    }
+    .article-header {
+        padding: 40px 20px 30px;
+    }
+    .article-header h1 {
+        font-size: 2.5rem;
+    }
+    .article-header__excerpt {
+        font-size: 1rem;
+    }
+    .article-cover {
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+    .article-body {
+        padding: 0 20px;
+        font-size: 1rem;
+    }
+    .article-body h2 {
+        font-size: 1.7rem;
+    }
+    .article-tags,
+    .article-credits {
+        padding: 0 20px;
+    }
+    .article-credits {
+        padding: 20px;
+    }
+    .related-articles {
+        padding: 40px 20px 0;
+    }
+    .related-articles h2 {
+        font-size: 1.8rem;
+    }
+    .articles-grid--related {
+        grid-template-columns: 1fr;
+    }
+}

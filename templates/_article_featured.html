@@ -1,0 +1,13 @@
+{# templates/_article_featured.html #}
+<article class="article-featured">
+    <div class="article-featured__image">
+        <img src="{{ url_for('static', filename=article.image) }}" alt="{{ article.title }}">
+    </div>
+    <div class="article-featured__info">
+        <span class="badge badge--dark">DESTACADO</span>
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.excerpt }}</p>
+        <p class="meta">Por: <strong>{{ article.author }}</strong> · {{ article.date }}</p>
+        <a href="{{ url_for('fashion_detail', slug=article.slug) }}" class="btn-read">Leer artículo →</a>
+    </div>
+</article>

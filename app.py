@@ -4,6 +4,19 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+
+# from werkzeug.middleware.proxy_fix import ProxyFix
+
+# app = Flask(__name__)
+
+# # Decirle a Flask que confíe en los headers de Cloudflare
+# # x_for=1 → confía en 1 proxy que manda X-Forwarded-For
+# # x_proto=1 → confía en 1 proxy que manda X-Forwarded-Proto
+# # x_host=1 → confía en 1 proxy que manda X-Forwarded-Host
+# # x_prefix=1 → confía en 1 proxy que manda X-Forwarded-Prefix
+# app.wsgi_app = ProxyFix(
+#     app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1
+# )
 # ============================================
 # SNAP — datos mock
 # ============================================
@@ -314,4 +327,4 @@ def shoplist():
     return render_template('9_shoplist.html')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=8000)

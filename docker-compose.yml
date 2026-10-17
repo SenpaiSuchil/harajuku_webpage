@@ -5,13 +5,9 @@ services:
     build: .
     container_name: harajuku_app
     ports:
-      - "5001:5000"
-    volumes:
-      # Montamos el directorio actual dentro del contenedor
-      # Esto permite hot-reload al editar archivos
-      - .:/app
-      
+      - "127.0.0.1:8000:8000"
     environment:
-      - FLASK_ENV=development
-      - FLASK_DEBUG=1
+      # Opcional: si usas SECRET_KEY para sesiones, define aquí
+      # SECRET_KEY: cambia-esto-por-algo-largo-y-aleatorio
+      FLASK_ENV: production
     restart: unless-stopped

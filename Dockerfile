@@ -1,24 +1,24 @@
-# Imagen base oficial de Python (versión ligera)
 FROM python:3.11-slim
 
-# Evita que Python escriba archivos .pyc y permita logs en tiempo real
+# Evita archivos .pyc y logs con buffer
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiamos primero el requirements para aprovechar el cache de Docker
+# Dependencias primero (aprovecha cache de capas)
 COPY requirements.txt .
-
-# Instalamos las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiamos el resto del proyecto
+# Copia el resto del proyecto
 COPY . .
 
-# Exponemos el puerto 5000 (el que usa Flask por defecto)
-EXPOSE 5000
+# Crea un usuario no-root y dale ownership de /app
+RUN useradd -r -u 1001 appuser && chown -R appuser:appuser /app
+USER appuser
 
-# Comando para ejecutar la app
+EXPOSE 8000
+
+# Arranca con Gunicorn usando el archivo de config
+CMD ["gunicorn", "-c", "gunicorn.conf.py", "app:app"]
 CMD ["python", "app.py"]

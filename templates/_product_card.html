@@ -1,0 +1,17 @@
+{# templates/_product_card.html #}
+{# Espera: product (dict) #}
+<article class="product-card">
+    <div class="product-card__thumb">
+        <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.title }}">
+    </div>
+    <div class="product-card__body">
+        <span class="badge badge--tag">{{ product.category }}</span>
+        <h3><a href="#">{{ product.title }}</a></h3>
+        <p>{{ product.excerpt }}</p>
+        <p class="meta">
+            Por: <strong>{{ product.author }}</strong>
+            {% if product.brand %} · {{ product.brand }}{% endif %}
+            {% if product.price %} · {{ product.price }}{% endif %}
+        </p>
+    </div>
+</article>

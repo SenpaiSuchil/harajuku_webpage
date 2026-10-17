@@ -4,6 +4,116 @@ app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 
+# ============================================
+# SNAP — datos mock
+# ============================================
+SNAP_FEATURED = {
+    "title": "Snap Session #12 — Parque Agua Azul",
+    "cover": "mock/snap-featured.jpg",
+    "date": "15 oct 2026",
+    "location": "Parque Agua Azul",
+    "photo_count": 42,
+}
+
+SNAP_SESSIONS = [
+    {
+        "title": "Snap Session #11 — Centro Histórico",
+        "cover": "mock/snap-1.jpg",
+        "date": "02 oct 2026",
+        "location": "Centro GDL",
+    },
+    {
+        "title": "Snap Session #10 — Coord Meetup",
+        "cover": "mock/snap-2.jpg",
+        "date": "18 sep 2026",
+        "location": "Chapultepec",
+    },
+    {
+        "title": "Snap Session #09 — Lolita Tea Party",
+        "cover": "mock/snap-3.jpg",
+        "date": "04 sep 2026",
+        "location": "Zapopan",
+    },
+    {
+        "title": "Snap Session #08 — Jirai Kei Night",
+        "cover": "mock/snap-4.jpg",
+        "date": "22 ago 2026",
+        "location": "Andares",
+    },
+    {
+        "title": "Snap Session #07 — Visual Kei Live",
+        "cover": "mock/snap-5.jpg",
+        "date": "10 ago 2026",
+        "location": "Bar Americas",
+    },
+    {
+        "title": "Snap Session #06 — Verano Decora",
+        "cover": "mock/snap-6.jpg",
+        "date": "28 jul 2026",
+        "location": "Tlaquepaque",
+    },
+]
+
+# ============================================
+# BEAUTY — datos mock
+# ============================================
+BEAUTY_PRODUCTS = [
+    {
+        "title": "Rom&nd Juicy Lasting Tint",
+        "excerpt": "El labial coreano que se volvió viral. Textura ligera, acabado jugoso y larga duración sin sentirse pegajoso.",
+        "image": "mock/beauty-1.jpg",
+        "author": "Karin S.",
+        "category": "Labiales",
+        "brand": "Rom&nd",
+        "price": "$280 MXN",
+    },
+    {
+        "title": "Heroine Make Long & Curl Mascara",
+        "excerpt": "El rímel japonés que aguanta todo: lágrimas, sudor, conciertos. Larga las pestañas sin grumos.",
+        "image": "mock/beauty-2.jpg",
+        "author": "Yuki T.",
+        "category": "Ojos",
+        "brand": "Kiss Me",
+        "price": "$320 MXN",
+    },
+    {
+        "title": "Rutina de skincare coreano para piel mixta",
+        "excerpt": "Guía paso a paso con 5 productos accesibles para el clima de Guadalajara. Sí, incluye protector solar.",
+        "image": "mock/beauty-3.jpg",
+        "author": "Mariana R.",
+        "category": "Piel",
+        "brand": None,
+        "price": None,
+    },
+    {
+        "title": "Esmaltes holográficos para coord Jirai Kei",
+        "excerpt": "Selección de esmaltes en tonos rosa, negro y holográficos que combinan perfecto con la estética Jirai.",
+        "image": "mock/beauty-4.jpg",
+        "author": "Diego M.",
+        "category": "Uñas",
+        "brand": "Varios",
+        "price": "desde $90 MXN",
+    },
+    {
+        "title": "Cómo lograr el look Gyaru: cabello y maquillaje",
+        "excerpt": "Tutorial completo de maquillaje Gyaru: ojos grandes, rubor marcado y cabello con volumen.",
+        "image": "mock/beauty-5.jpg",
+        "author": "Sayuri H.",
+        "category": "Cabello",
+        "brand": None,
+        "price": None,
+    },
+    {
+        "title": "Accesorios de cabello estilo Lolita",
+        "excerpt": "Donde conseguir bonnets, listones y broches para completar un coord Lolita sin gastar de más.",
+        "image": "mock/beauty-6.jpg",
+        "author": "Mariana R.",
+        "category": "Accesorios",
+        "brand": "Varios",
+        "price": "desde $150 MXN",
+    },
+]
+
 
 # ============================================
 # DATOS MOCK (después vendrán de la DB)
@@ -169,7 +279,7 @@ def fashion_detail(slug):
 
 @app.route('/beauty')
 def beauty():
-    return render_template('2_beauty.html')
+    return render_template('2_beauty.html', products=BEAUTY_PRODUCTS)
 
 @app.route('/vlog')
 def vlog():
@@ -177,7 +287,11 @@ def vlog():
 
 @app.route('/snap')
 def snap():
-    return render_template('4_snap.html')
+    return render_template(
+        '4_snap.html',
+        featured=SNAP_FEATURED,
+        sessions=SNAP_SESSIONS,
+    )
 
 @app.route('/resources')
 def resources():

@@ -1,0 +1,14 @@
+{# templates/_snap_hero.html #}
+{# Espera: session (dict) #}
+<article class="snap-hero">
+    <a href="#" class="snap-hero__link">
+        <div class="snap-hero__image">
+            <img src="{{ url_for('static', filename=session.cover) }}" alt="{{ session.title }}">
+        </div>
+        <div class="snap-hero__overlay">
+            <span class="badge badge--dark">DESTACADA</span>
+            <h2>{{ session.title }}</h2>
+            <p>{{ session.date }} · {{ session.location }} · {{ session.photo_count }} fotos</p>
+        </div>
+    </a>
+</article>

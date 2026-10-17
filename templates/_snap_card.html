@@ -1,0 +1,13 @@
+{# templates/_snap_card.html #}
+{# Espera: session (dict) #}
+<article class="snap-card">
+    <a href="#" class="snap-card__link">
+        <div class="snap-card__image">
+            <img src="{{ url_for('static', filename=session.cover) }}" alt="{{ session.title }}">
+        </div>
+        <div class="snap-card__overlay">
+            <h3>{{ session.title }}</h3>
+            <p class="snap-card__meta">{{ session.date }} · {{ session.location }}</p>
+        </div>
+    </a>
+</article>

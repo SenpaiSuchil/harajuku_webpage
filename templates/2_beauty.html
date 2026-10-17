@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
 
-{% block title %}Belleza — Harajuku Pals GDL{% endblock %}
+{% block title %}Beauty — Harajuku Pals GDL{% endblock %}
 
 {% block content %}
 
-    <section class="page-header">
-        <h1>BELLEZA</h1>
-        <p>Los ultimos productos, tips y recetas para llevar al maximo tu expresion artistica</p>
-    </section>
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <h1>BEAUTY</h1>
+    <p>Reseñas, tutoriales y productos con estética japonesa, curados por la comunidad.</p>
+</section>
 
-    <section class="main-content">
-        <p class="placeholder">Próximamente: artículos de Belleza.</p>
-        {% include '_instagram_box.html' %}
-    </section>
+
+<!-- FILTROS -->
+<section class="filters-wrapper">
+    <div class="filters">
+        <button class="filter is-active">Todos</button>
+        <button class="filter">Labiales</button>
+        <button class="filter">Ojos</button>
+        <button class="filter">Piel</button>
+        <button class="filter">Uñas</button>
+        <button class="filter">Cabello</button>
+        <button class="filter">Accesorios</button>
+    </div>
+</section>
+
+
+<!-- LISTA VERTICAL DE RESEÑAS -->
+<section class="products-wrapper">
+    <div class="products-list">
+        {% for product in products %}
+            {% include '_product_card.html' %}
+        {% endfor %}
+    </div>
+</section>
+
+
+<!-- INSTAGRAM -->
+{% include '_instagram_box.html' %}
 
 {% endblock %}

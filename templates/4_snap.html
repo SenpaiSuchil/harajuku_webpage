@@ -4,14 +4,31 @@
 
 {% block content %}
 
-    <section class="page-header">
-        <h1>SNAP</h1>
-        <p>Las sesiones de nuestra comunidad, fotos casuales de las modelos de la comunidad y más</p>
-    </section>
+<!-- PAGE HEADER -->
+<section class="page-header">
+    <h1>SNAP</h1>
+    <p>Sesiones de fotos de la comunidad, con créditos a fotógrafxs y models.</p>
+</section>
 
-    <section class="main-content">
-        <p class="placeholder">Próximamente: artículos de snap.</p>
-        {% include '_instagram_box.html' %}
-    </section>
+
+<!-- SESIÓN DESTACADA -->
+<section class="snap-hero-wrapper">
+    {% with session=featured %}
+        {% include '_snap_hero.html' %}
+    {% endwith %}
+</section>
+
+<!-- GRID DE SESIONES -->
+<section class="snap-wrapper">
+    <div class="snap-grid">
+        {% for session in sessions %}
+            {% include '_snap_card.html' %}
+        {% endfor %}
+    </div>
+</section>
+
+
+<!-- INSTAGRAM -->
+{% include '_instagram_box.html' %}
 
 {% endblock %}
